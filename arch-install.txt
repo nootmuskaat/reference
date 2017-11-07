@@ -142,9 +142,9 @@ reboot
 # I like i3, so that's what I've installed here
 # TODO - this needs to be expanded
 pacman -S i3 xorg
-pacman -S urxvt firefox chromium tmux
-pacman -S alsamixer alsa-utils
-pacman -S thunar feh vim openssh lxappearance unzip
+pacman -S urxvt firefox chromium thunar feh lxappearance
 pacman -S arc-gtk-theme
+pacman -S alsamixer alsa-utils
+pacman -S tmux vim openssh unzip
 
 
