@@ -52,54 +52,53 @@ BLK_ON_CYN='\[\e[30;46m\]'
 BLK_ON_WHT='\[\e[30;47m\]'
 
 # The matching game
-case "$OS" in 
-    "centos") 
+case "$OS" in
+    "centos")
         if [ $UID -eq 0 ]; then
             export PS1="$BLK_ON_YLW$ROOT_PS1$END"
             export PS2="$BLK_ON_YLW$ROOT_PS2$END"
         else
-            export PS1="$RED$U$YLW$USER_PS1$END" 
-            export PS2="$YLW$USER_PS2$END" 
+            export PS1="$RED$U$YLW$USER_PS1$END"
+            export PS2="$YLW$USER_PS2$END"
         fi;;
-    "redhat") 
+    "redhat")
         if [ $UID -eq 0 ]; then
             export PS1="$BLK_ON_RED$ROOT_PS1$END"
             export PS2="$BLK_ON_RED$ROOT_PS2$END"
         else
-            export PS1="$YLW$U$RED$USER_PS1$END" 
-            export PS2="$RED$USER_PS2$END" 
+            export PS1="$YLW$U$RED$USER_PS1$END"
+            export PS2="$RED$USER_PS2$END"
         fi;;
-    "suse") 
+    "suse")
         if [ $UID -eq 0 ]; then
             export PS1="$BLK_ON_GRN$ROOT_PS1$END"
             export PS2="$BLK_ON_GRN$ROOT_PS2$END"
         else
-            export PS1="$RED$U$GRN$USER_PS1$END" 
-            export PS2="$GRN$USER_PS2$END" 
+            export PS1="$RED$U$GRN$USER_PS1$END"
+            export PS2="$GRN$USER_PS2$END"
         fi;;
-    "debian"|"ubuntu") 
+    "debian"|"ubuntu")
         if [ $UID -eq 0 ]; then
             export PS1="$BLK_ON_MAG$ROOT_PS1$END"
             export PS2="$BLK_ON_MAG$ROOT_PS2$END"
         else
-            export PS1="$YLW$U$MAG$USER_PS1$END" 
-            export PS2="$MAG$USER_PS2$END" 
+            export PS1="$YLW$U$MAG$USER_PS1$END"
+            export PS2="$MAG$USER_PS2$END"
         fi;;
     "arch")
         if [ $UID -eq 0 ]; then
             export PS1="$BLK_ON_CYN$ROOT_PS1$END"
             export PS2="$BLK_ON_CYN$ROOT_PS2$END"
         else
-            export PS1="$YLW$U$CYN$USER_PS1$END" 
-            export PS2="$CYN$USER_PS2$END" 
+            export PS1="$YLW$U$CYN$USER_PS1$END"
+            export PS2="$CYN$USER_PS2$END"
         fi;;
-    
-    *) 
+    *)
         if [ $UID -eq 0 ]; then
             export PS1="$BLK_ON_WHT$ROOT_PS1$END"
             export PS2="$BLK_ON_WHT$ROOT_PS2$END"
         else
-            export PS1="$BLK_ON_WHT$U$USER_PS1$END" 
-            export PS2="$BLK_ON_WHT$USER_PS2$END" 
+            export PS1="$BLK_ON_WHT$U$USER_PS1$END"
+            export PS2="$BLK_ON_WHT$USER_PS2$END"
         fi;;
 esac
