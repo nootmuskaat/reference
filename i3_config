@@ -188,6 +188,7 @@ client.urgent		    $urg-bg-color	$urg-bg-color	$text-color	    $indicator
 # finds out, if available)
 bar {
     status_command i3status
+    tray_output none
 	colors {
 		background $bg-color
 		separator #757575
@@ -211,5 +212,4 @@ bindsym XF86MonBrightnessUp exec sudo screen-brightness +
 bindsym XF86MonBrightnessDown exec sudo screen-brightness -
 
 # Workspace assignments
-assign [class="Firefox"] $workspace3
 assign [class="Chromium"] $workspace4
