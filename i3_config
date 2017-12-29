@@ -107,7 +107,7 @@ set $workspace5 "5: misc"
 set $workspace6 "6: misc"
 set $workspace7 "7: misc"
 set $workspace8 "8: misc"
-set $workspace9 "9: misc"
+set $workspace9 "9: media"
 set $workspace0 "10: misc"
 
 # switch to workspace
