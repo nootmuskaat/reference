@@ -12,6 +12,7 @@ alias .bashrc='source $HOME/.bashrc'
 alias bashrc='vi $HOME/.bashrc && .bashrc'
 alias which='alias | which -i'
 alias cal='cal -m3n9'
+alias gdb='gdb -q'
 # This is sadly necessary
 alias wq="echo you\'re not in vim"
 alias q=wq
