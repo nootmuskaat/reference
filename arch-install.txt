@@ -36,7 +36,7 @@ gdisk /dev/sda
 > 1
 > (start) 2048 # default
 > (end) +256M
-> 8300 # default 
+> 8300 # default
 # I believe I went ahead at this time to create /dev/sda2 as well
 > n
 > 2
@@ -70,9 +70,9 @@ mkfs.ext4 /dev/mapper/rootvg-root
 mkfs.ext4 /dev/mapper/rootvg-home
 mkswap /dev/mapper/rootvg-swap
 
-mount /dev/mapper/root-vg /mnt
+mount /dev/mapper/rootvg-root /mnt
 mkdir -p /mnt/{home,boot}
-mount /dev/mapper/root-home /mnt/home
+mount /dev/mapper/rootvg-home /mnt/home
 mount /dev/sda1 /mnt/boot
 swapon /dev/mapper/rootvg-swap
 
@@ -117,7 +117,13 @@ passwd
 useradd -m newuser
 passwd newuser
 
-# I'm not sure what of this works and what doesn't so 
+exit # from the chroot
+umount -R /mnt
+reboot
+
+# This can only be done after rebooting
+
+# I'm not sure what of this works and what doesn't so
 pacman -S ifplugd dialog
 cd /etc/netctl
 cp examples/ethernet-dhcp enp1s0 # or whatever your interface is called
@@ -131,20 +137,15 @@ vi network-name
 pacman -S rfkill
 rfkill unblock wifi
 ip link set wlp2s0 down # TODO - I'm really not sure why I have to down the IF
-wifi-menu # 
+wifi-menu #
 
-exit # from the chroot
-umount -R /mnt
-reboot
 
 ## End basic install. Should be able to login after rebooting/decrypting
 
 # I like i3, so that's what I've installed here
 # TODO - this needs to be expanded
 pacman -S i3 xorg
-pacman -S urxvt firefox chromium thunar feh lxappearance
+pacman -S rxvt-unicode firefox chromium thunar feh lxappearance
 pacman -S arc-gtk-theme
 pacman -S alsamixer alsa-utils
 pacman -S tmux vim openssh unzip
-
-

@@ -1,0 +1,38 @@
+# .bashrc_skipper
+# functions or actions specific to this host
+
+alias sshk='ssh kowalski -p 24065'
+alias pfirefox='firefox --private-window'
+
+# get rid of those dang ~/Desktop or ~/Downloads folders
+if [ -d $HOME/Desktop ]; then
+    cd $HOME/Desktop
+    for i in *; do
+	    mv $HOME/Desktop/$i $HOME/tmp/$i-desktopped-$(date +%s) 2>/dev/null
+    done
+    cd $HOME
+    rmdir $HOME/Desktop
+    ls $HOME/tmp/*-desktopped-* 2>/dev/null
+fi
+if [ -d $HOME/Downloads ]; then
+    cd $HOME/Downloads
+    for i in *; do
+	    mv $HOME/Downloads/$i $HOME/tmp/$i-downloaded-$(date +%s) 2>/dev/null
+    done
+    cd $HOME
+    rmdir $HOME/Downloads
+    ls $HOME/tmp/*-downloaded-* 2>/dev/null
+fi
+
+# Auto-start i3
+TTY=$(/usr/bin/tty)
+if [ "$TTY" == "/dev/tty1" ]; then
+    /usr/bin/startx &>> /var/log/i3/i3log_$(date +'%F-%H-%M-%S')
+fi
+
+# Auto-start / reconnect to tmux
+if [ -z "$TMUX" ]; then
+    retmux || tmux
+fi
+
+mk() { make $1 && echo "---" && ./$1 ; echo $? ;}

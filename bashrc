@@ -36,8 +36,9 @@ function retmux() {
 
 # Generic prompt setup for the most common Linux distros
 if [ -e /etc/prompt-setup ]; then
-    # alternatively $HOME/.prompt-setup
     source /etc/prompt-setup
+elif [ -e $HOME/.prompt-setup ]; then
+    source $HOME/.prompt-setup
 fi
 
 # Any host specific functions or actions
