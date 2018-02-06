@@ -1,0 +1,10 @@
+[user]
+	name = nootmuskaat
+	email = **********
+[alias]
+	ss = status -s
+	graph = log --oneline --graph --all
+	b = branch -vva
+	g = log --oneline --graph --all -n10
+[credential]
+	helper = cache
