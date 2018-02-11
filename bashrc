@@ -21,19 +21,6 @@ alias :wq=wq
 
 export EDITOR=vim
 
-function retmux() {
-    NUM_TMUX_SES=$(tmux list-sessions 2>/dev/null | wc -l)
-    if [ $NUM_TMUX_SES -gt 1 ]; then
-        echo "More than 1 tmux session; reattach with tmux attach -t"
-        tmux list-sessions
-    elif [ $NUM_TMUX_SES -eq 0 ]; then
-        echo "No open tmux sessions"
-    else
-        SES=$(tmux list-sessions | awk -F':' '{ print $1 }')
-        tmux attach-session -t $SES
-    fi
-}
-
 # Generic prompt setup for the most common Linux distros
 if [ -e /etc/prompt-setup ]; then
     source /etc/prompt-setup

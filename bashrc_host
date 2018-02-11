@@ -1,8 +1,5 @@
-# .bashrc_skipper
+# .bashrc_HOSTNAME
 # functions or actions specific to this host
-
-alias sshk='ssh kowalski -p 24065'
-alias pfirefox='firefox --private-window'
 
 # get rid of those dang ~/Desktop or ~/Downloads folders
 if [ -d $HOME/Desktop ]; then
@@ -30,9 +27,10 @@ if [ "$TTY" == "/dev/tty1" ]; then
     /usr/bin/startx &>> /var/log/i3/i3log_$(date +'%F-%H-%M-%S')
 fi
 
-# Auto-start / reconnect to tmux
+# If opening a new terminal window, count open tmux sessions
 if [ -z "$TMUX" ]; then
-    retmux || tmux
+    printf '\e[30;47m %d open tmux sessions \e[m\n' \
+        $(tmux ls 2>/dev/null | wc -l)
 fi
 
 mk() { make $1 && echo "---" && ./$1 ; echo $? ;}
