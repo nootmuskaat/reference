@@ -1,4 +1,6 @@
 # $HOME/.Xresources
-URxvt.font: xft:monospace:size=10
-URxvt.letterSpace: -1
 URxvt.scrollBar: false
+URxvt*background: Black
+URxvt*foreground: White
+URxvt*font:  -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-1,xft:terminus:pixelsize:12
+URxvt*boldFont:  -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso10646-1,xft:terminus:bold:pixelsize:12

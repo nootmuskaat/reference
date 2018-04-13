@@ -8,3 +8,4 @@ set ruler
 
 syntax on
 colorscheme desert
+nmap <F1> <nop>

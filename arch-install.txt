@@ -144,8 +144,10 @@ wifi-menu #
 
 # I like i3, so that's what I've installed here
 # TODO - this needs to be expanded
-pacman -S i3 xorg xorg-xinit
-pacman -S rxvt-unicode firefox chromium thunar feh lxappearance
-pacman -S arc-gtk-theme
-pacman -S alsamixer alsa-utils
-pacman -S tmux vim openssh unzip bind-tools
+pacman -S i3-wm i3lock i3status dmenu
+pacman -S xorg xorg-xinit
+pacman -S rxvt-unicode firefox chromium
+pacman -S arc-gtk-theme thunar feh lxappearance
+pacman -S tmux vim openssh unzip bind-tools alsa-utils
+pacman -S autocutsel
+#firefox http://terminus-font.sourceforge.net/
