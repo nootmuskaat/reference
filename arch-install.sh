@@ -1,3 +1,4 @@
+#!/bin/false
 # Notes from my arch install, e.g. should I need to re-install
 # as this is being done a few days after the fact, my memory
 # of any lessons learned may not be perfect
@@ -124,7 +125,7 @@ reboot
 # This can only be done after rebooting
 
 # I'm not sure what of this works and what doesn't so
-pacman -S ifplugd dialog
+pacman -S ifplugd dialog wpa_supplicant
 cd /etc/netctl
 cp examples/ethernet-dhcp enp1s0 # or whatever your interface is called
 vi enp1s0
