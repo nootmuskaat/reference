@@ -33,7 +33,7 @@ determine_distro() {
 }
 
 
-get_ps1_and_2() {
+set_ps1_and_2() {
     local -r distro="$1"
     local -ir uid="$2"
     # formats
@@ -90,16 +90,14 @@ get_ps1_and_2() {
         ps1="${!user_color}${u}${!host_color}${user_ps1}"
         ps2="${!host_color}${user_ps2}"
     fi
-    echo "${ps1}${end}" "${ps2}${end}"
+    export PS1="${ps1}${end}"
+    export PS2="${ps2}${end}"
 }
 
 
 main() {
     local -r distro="$(determine_distro)"
-    get_ps1_and_2 "$distro" "$UID" | while read ps1 ps2 ; do
-        export PS1="$ps1 "
-        export PS2="$ps2 "
-    done
+    set_ps1_and_2 "$distro" "$UID"
 }
 
 main
