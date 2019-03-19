@@ -1,10 +1,15 @@
 [user]
-	name = nootmuskaat
-	email = **********
+    name = nootmuskaat
+    email = **********
 [alias]
-	ss = status -s
-	graph = log --oneline --graph --all
-	b = branch -vva
-	g = log --oneline --graph --all -n10
+    ss = status -s
+    l = log  --pretty=\"%C(auto)%h %s %C(auto,green)(%cr) %C(auto,cyan)%an%C(auto)%d\"
+    ln = l -n10
+    lg = l --graph
+    lga = lg --all
+    b = branch -vv
+    bb = branch -vv --all
+    co = checkout
+    ci = commit
 [credential]
-	helper = cache
+    helper = cache
