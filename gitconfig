@@ -2,14 +2,16 @@
     name = nootmuskaat
     email = **********
 [alias]
-    ss = status -s
-    l = log  --pretty=\"%C(auto)%h %s %C(auto,green)(%cr) %C(auto,cyan)%an%C(auto)%d\"
-    ln = l -n10
-    lg = l --graph
-    lga = lg --all
     b = branch -vv
     bb = branch -vv --all
     co = checkout
     ci = commit
+    fp = fetch --prune
+    l = log  --pretty=\"%C(auto)%h %s %C(auto,green)(%cr) %C(auto,cyan)%an%C(auto)%d\"
+    lg = l --graph
+    lga = lg --all
+    ln = l -n10
+    sh = show --pretty=fuller
+    ss = status -s
 [credential]
     helper = cache
