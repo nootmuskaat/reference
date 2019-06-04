@@ -5,12 +5,17 @@
     b = branch -vv
     bb = branch -vv --all
     co = checkout
+    chpk = cherry-pick
     ci = commit
     fp = fetch --prune
     l = log  --pretty=\"%C(auto)%h %s %C(auto,green)(%cr) %C(auto,cyan)%an%C(auto)%d\"
+    ll = log  --pretty=\"%C(auto)%h %s %C(auto,magenta)(%ar, %C(auto,green)%cr) %C(auto,cyan)%an%C(auto)%d\"
     lg = l --graph
+    llg = ll --graph
     lga = lg --all
+    llga = llg --all
     ln = l -n10
+    lln = ll -n10
     sh = show --pretty=fuller
     ss = status -s
 [credential]
