@@ -2,8 +2,9 @@
 
 # My standared aliases
 alias vi='vim'
-alias ll='\ls -lA'
-alias ls='ls -F'
+alias view='vim -R'
+alias ll='command ls -lA --group-directories-first'
+alias ls='command ls -F'
 alias o='less'
 alias O='less -R'
 alias grep='grep --color=auto'
@@ -11,8 +12,9 @@ alias cgrep='grep --color=always'
 alias .bashrc='source $HOME/.bashrc'
 alias bashrc='vi $HOME/.bashrc && .bashrc'
 alias which='alias | which -i'
-alias cal='cal -m3n9'
-alias gdb='gdb -q'
+alias ipython='command ipython --colors=NoColor --classic'
+alias groovysh='groovysh -Dgroovysh.prompt="{G}" --color=false'
+
 # This is sadly necessary
 alias wq="echo you\'re not in vim"
 alias q=wq
@@ -33,3 +35,15 @@ HOSTRC="$HOME/.bashrc_$(hostname)"
 if [ -f $HOSTRC ]; then
     source $HOSTRC
 fi
+
+function cal() {
+    command cal -m -3 -n9 $@ 2>/dev/null || /bin/cal -m -3 $@
+}
+
+function sorted() {
+    local src="$1"
+    local temp="$(mktemp -p $(dirname ${src}))"
+    cp "${src}" "${temp}" &&
+        sort "${temp}" > "${src}" &&
+        rm "${temp}"
+}
